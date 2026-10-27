@@ -28,12 +28,6 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 
 	warn("COFFEE MACHINE V2 - SUCESSFULLY INITIALIZED ASSET.")
 
-	for _, v in script.Parent:GetDescendants() do
-		if v:IsA("Highlight") then
-			v.FillColor = Config.HighlightColor
-		end
-	end
-
 
 
 	local InsertService = game:GetService("InsertService")
@@ -86,6 +80,12 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	for _, v in game.Workspace:GetDescendants() do
 		if v:IsA("Decal") and v.Name == "LOGO" and v:HasTag("COFFEE_LOGO") then
 			v.ColorMap = Config.LogoID
+		end
+	end
+
+for _, v in script.Parent.Parent:GetDescendants() do
+		if v:IsA("Highlight") then
+			v.FillColor = Config.HighlightColor
 		end
 	end
 
