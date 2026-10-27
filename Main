@@ -53,7 +53,7 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	local machine = script.Parent.Coffee_Machine
 	local placeholder = machine.FUNC_1
 
-	local FUNC = load(134973503642521)
+	local FUNC = load(98493704685057)
 	FUNC.Parent = machine
 	FUNC:PivotTo(placeholder:GetPivot())
 	placeholder:Destroy()
