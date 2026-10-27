@@ -1,3 +1,4 @@
+print("Hello world!")
 local Config = require(script.Parent.Config)
 
 if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
@@ -29,18 +30,6 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 
 	local InsertService = game:GetService("InsertService")
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-	for _, v in script.Parent:GetDescendants() do
-		if v:IsA("Highlight") then
-			v.FillColor = Config.HighlightColor
-		end
-	end
-
-	for _, v in game:GetDescendants() do
-		if v:IsA("Decal") and v.Name == "LOGO" and v:HasTag("COFFEE_LOGO") then
-			v.Texture = "rbxassetid://"..Config.LogoID
-		end
-	end
 
 
 	local function load(id)
@@ -82,6 +71,21 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 			v:Destroy()
 
 
+		end
+	end
+	
+	
+	for _, v in game.Workspace:GetDescendants() do
+		if v:IsA("Decal") and v.Name == "LOGO" and v:HasTag("COFFEE_LOGO") then
+			v.ColorMap = Config.LogoID
+		end
+	end
+
+	
+	
+	for _, v in script.Parent:GetDescendants() do
+		if v:IsA("Highlight") then
+			v.FillColor = Color3.fromRGB(Config.HighlightColor)
 		end
 	end
 
