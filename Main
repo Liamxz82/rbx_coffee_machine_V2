@@ -45,7 +45,7 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	local CE = load(98506078588888)
 	CE.Parent = ReplicatedStorage
 
-	local CS = load(101675792053123)
+	local CS = load(89476532173618)
 	CS.Parent = ReplicatedStorage
 
 
@@ -53,7 +53,7 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	local machine = script.Parent.Coffee_Machine
 	local placeholder = machine.FUNC_1
 
-	local FUNC = load(91902581779069)
+	local FUNC = load(133240602537743)
 	FUNC.Parent = machine
 	FUNC:PivotTo(placeholder:GetPivot())
 	placeholder:Destroy()
