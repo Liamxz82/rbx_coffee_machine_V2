@@ -1,1 +1,68 @@
-print("Hello World!")
+local Config = require(script.Parent.Config)
+
+if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
+
+   ____  _ _                      ___ ____  
+  / __ \| (_) __ _ _ __ ___ __  _( _ )___ \ 
+ / / _` | | |/ _` | '_ ` _ \\ \/ / _ \ __) |
+| | (_| | | | (_| | | | | | |>  < (_) / __/ 
+ \ \__,_|_|_|\__,_|_| |_| |_/_/\_\___/_____|
+  \____/                                    
+  
+  COFFEE MACHINE V2.0.0 MADE BY liamxz82 DO NOT DISTRIBUTE.
+  
+  LIAMXZ82 OWNS THE RIGHT TO ALL THE SCRIPTS WITHIN THIS PRODUCT.
+  NOBODY EXCEPT FOR LIAMXZ82 IS ALLOWED TO CLAIM THIS AS THEIR OWN ASSET / PRODUCT (except for downloadable 3D models) (incl V1)
+  
+  CREDITS:
+  liamxz82 - Scripted the machine main functions & coffee mugs models
+  hakangztk - Made the coffee machine 3D model & coffee grinder models (available on sketchfab)
+  Lanzaman - Made the milk jug 3D model (available on sketchfab)
+
+]] then
+	
+	
+
+	warn("COFFEE MACHINE V2 - SUCESSFULLY INITIALIZED ASSET.")
+
+	local InsertService = game:GetService("InsertService")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+	for _, v in script.Parent:GetDescendants() do
+		if v:IsA("Highlight") then
+			v.FillColor = Config.HighlightColor
+		end
+	end
+
+	local function load(id)
+		local container = InsertService:LoadAsset(id)
+		local asset = container:GetChildren()[1]
+		asset.Parent = nil
+		container:Destroy()
+		return asset
+	end
+
+	local CE = load(98506078588888)
+	CE.Parent = ReplicatedStorage
+
+	local CS = load(101675792053123)
+	CS.Parent = ReplicatedStorage
+
+	local machine = script.Parent.Coffee_Machine
+	local placeholder = machine.FUNC_1
+
+	local FUNC = load(134973503642521)
+	FUNC.Parent = machine
+	FUNC:PivotTo(placeholder:GetPivot())
+
+	placeholder:Destroy()
+	
+	
+
+else
+
+	warn("COFFEE MACHINE V2 - LOADING FAILED THIS MIGHT BE DUE TO A MODIFICATION MADE IN THE SCRIPTS OR MODIFICATION OF THE CREDITS.")
+
+	script.Parent:Destroy()
+
+end
