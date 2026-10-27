@@ -38,7 +38,7 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	
 	for _, v in script.Parent:GetDescendants() do
 		if v:IsA("Decal") and v.Name == "LOGO" and v:HasTag("COFFEE_LOGO") then
-			v.ColorMapContent = Content.fromAssetId(Config.LogoID)
+			v.Texture = "rbxassetid://" .. tonumber(Config.LogoID)
 		end
 	end
 
