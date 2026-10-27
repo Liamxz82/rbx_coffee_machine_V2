@@ -82,12 +82,13 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	end
 
 	
-	
-	for _, v in script.Parent:GetDescendants() do
-		if v:IsA("Highlight") then
-			v.FillColor = Color3.fromRGB(Config.HighlightColor)
-		end
+
+
+for _, v in script.Parent:GetDescendants() do
+	if v:IsA("Highlight") then
+		v.FillColor = Config.HighlightColor
 	end
+end
 
 
 else
