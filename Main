@@ -20,8 +20,8 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
   Lanzaman - Made the milk jug 3D model (available on sketchfab)
 
 ]] then
-	
-	
+
+
 
 	warn("COFFEE MACHINE V2 - SUCESSFULLY INITIALIZED ASSET.")
 
@@ -47,6 +47,8 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 
 	local CS = load(101675792053123)
 	CS.Parent = ReplicatedStorage
+	
+	
 
 	local machine = script.Parent.Coffee_Machine
 	local placeholder = machine.FUNC_1
@@ -54,10 +56,26 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 	local FUNC = load(134973503642521)
 	FUNC.Parent = machine
 	FUNC:PivotTo(placeholder:GetPivot())
-
 	placeholder:Destroy()
 	
 	
+
+	local grinders = script.Parent.Coffee_Grinders
+
+	for i, v in script.Parent.Coffee_Grinders:GetChildren() do
+		if v.Name == "Coffee_Grinder" and v:HasTag("Coffee_Grinder_V2") then
+			
+			
+			local Grinder = load(127307855793262)
+			Grinder.Parent = grinders
+			Grinder:PivotTo(v:GetPivot())
+			
+			v:Destroy()
+			
+			
+		end
+	end
+
 
 else
 
