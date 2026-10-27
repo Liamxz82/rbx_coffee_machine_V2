@@ -35,10 +35,10 @@ if Config.DO_NOT_DELETE_OR_CHANGE_THIS_TEXT == [[
 			v.FillColor = Config.HighlightColor
 		end
 	end
-	
-	for _, v in script.Parent:GetDescendants() do
+
+	for _, v in game:GetDescendants() do
 		if v:IsA("Decal") and v.Name == "LOGO" and v:HasTag("COFFEE_LOGO") then
-			v.Texture = "rbxassetid://" .. tonumber(Config.LogoID)
+			v.Texture = "rbxassetid://"..Config.LogoID
 		end
 	end
 
